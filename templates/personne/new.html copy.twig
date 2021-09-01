@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Personne sauvegardée{% endblock %}
+
+{% block body %}
+
+			<h2 class="title">{{errors}}</h2>
+			<h2 class="title">{{personne_check}}</h2>
+
+
+			<button class="btn" type="button" name="backregister" href="{{path('personne',)}}">Retour</button>
+{% endblock %}
