@@ -4,11 +4,11 @@
 
 {% block body %}
 
-<form method="post" class="form" id="form">
+<form  method="post" class="form" id="form">
 
 			<h2 class="form__title">Enregistrer une personne</h2>
-			<input type="string" placeholder="Nom" class="input" name="email" id="inputNom"  required />  
-			<input type="string" placeholder="Prenom" class="input" name="password" id="inputPrenom"  required/>      
+			<input type="string" placeholder="Nom" class="input" name="nom" id="inputNom"  required />  
+			<input type="string" placeholder="Prenom" class="input" name="prenom" id="inputPrenom"  required/>      
             <input type="date" id="inputDateNaissance" name="datenaissance" required class="input"> 
 
 			<button class="btn" type="submit" name="sub" value ='1' href="{{path('personne_register',)}}">Enregistrer</button>

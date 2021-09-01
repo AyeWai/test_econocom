@@ -6,16 +6,15 @@ use App\Entity\Personne;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
-use DateTimeInterface;
 
 class PersonneService extends AbstractController{
 
-    public function persistPersonne(Request $request, ValidatorInterface $validator, DateTimeInterface $dateTimeInterface){
+    public function persistPersonne(Request $request, ValidatorInterface $validator){
         $entityManager = $this->getDoctrine()->getManager();
 
-        $firstname = $request->request->get("inputNom");
-        $lastname = $request->request->get("inputPrenom");
-        $date = $request->request->get("inputDateNaissance");
+        $firstname = $request->request->get('nom');
+        $lastname = $request->request->get('prenom');
+        $date = $request->request->get('datenaissance');
         $date2 = new \DateTime($date);
 
         $Personne = new Personne();
