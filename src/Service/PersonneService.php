@@ -16,7 +16,7 @@ class PersonneService extends AbstractController{
         $firstname = $request->request->get("inputNom");
         $lastname = $request->request->get("inputPrenom");
         $date = $request->request->get("inputDateNaissance");
-        $date2 = $dateTimeInterface($date);
+        $date2 = new \DateTime($date);
 
         $Personne = new Personne();
         $Personne->setNom($firstname);
