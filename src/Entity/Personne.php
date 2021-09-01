@@ -30,7 +30,7 @@ class Personne
 
     /**
      * @ORM\Column(type="date")
-     * @Assert\MoreThan("-150 years")
+     * @Assert\GreaterThan("-150 years")
      * @Assert\Date(
      *  message = "La personne à enregistrer doit avoir moins de 150ans. {{value}} est invalide. Rééssayez"
      * )

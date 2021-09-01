@@ -18,8 +18,6 @@ class PersonneController extends AbstractController
     public function index(): Response
     {
 
-
-
         return $this->render('personne/index.html.twig');
     }
 
