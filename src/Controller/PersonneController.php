@@ -28,9 +28,9 @@ class PersonneController extends AbstractController
     /**
      * @Route("/personne-register", name="personne_register")
      */
-    public function createPersonne(Request $request, ValidatorInterface $validator, PersonneService $PersonneService) : Response
+    public function createPersonne(Request $request, ValidatorInterface $validator, PersonneService $personneService) : Response
      {
-        $PersonneService->persistPersonne($request, $validator);
+        $PersonneService->persistPersonne($request, $validator, $personneService);
         
         return $this->render('personne/new.html.twig',[
             'personne_check' => 'Nouvelle personne bien enregistrée'
