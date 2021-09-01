@@ -10,7 +10,6 @@ use DateTimeInterface;
 
 class PersonneService extends AbstractController{
 
-    //protected $date ;
     public function persistPersonne(Request $request, ValidatorInterface $validator, DateTimeInterface $dateTimeInterface){
         $entityManager = $this->getDoctrine()->getManager();
 
