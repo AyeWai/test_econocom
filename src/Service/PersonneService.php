@@ -25,7 +25,10 @@ class PersonneService extends AbstractController{
         $errors = $validator->validate($Personne);
         if (count($errors) > 0) {
             //return new Response((string) $errors, 400);
-            return $this->render('personne/new.html.twig', ['errors' => $errors,]);
+            return $this->render('personne/new.html.twig', [
+                'errors' => $errors,
+                'personne_check' => ''
+        ]);
         }
         elseif(count($errors) == 0){
 

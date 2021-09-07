@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\PersonneRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=PersonneRepository::class)
@@ -29,6 +30,8 @@ class Personne
 
     /**
      * @ORM\Column(type="datetime")
+     * @Assert\GreaterThan("-150 years", message = "La personne à enregistrer doit avoir moins de 150ans {{ value }} est invalide. Rééssayez")
+     * 
      */
     private $datenaissance;
 

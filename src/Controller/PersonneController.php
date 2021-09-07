@@ -30,6 +30,7 @@ class PersonneController extends AbstractController
         
         return $this->render('personne/new.html.twig',[
             'personne_check' => 'Nouvelle personne bien enregistrée',
+            'errors' => '',
             
         ]);
         
