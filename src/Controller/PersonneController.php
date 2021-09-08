@@ -26,13 +26,7 @@ class PersonneController extends AbstractController
      */
     public function createPersonne(Request $request, ValidatorInterface $validator, PersonneService $personneService) : Response
      {
-        $personneService->persistPersonne($request, $validator);
-        
-        return $this->render('personne/new.html.twig',[
-            'personne_check' => 'Nouvelle personne bien enregistrée',
-            'errors' => '',
-            
-        ]);
-        
+        return $personneService->persistPersonne($request, $validator);
+              
      }
 }
