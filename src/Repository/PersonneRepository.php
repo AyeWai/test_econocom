@@ -19,6 +19,11 @@ class PersonneRepository extends ServiceEntityRepository
         parent::__construct($registry, Personne::class);
     }
 
+    public function findAll()
+    {
+        return $this->findBy(array(), array('id' => 'ASC'));
+    }
+
     // /**
     //  * @return Personne[] Returns an array of Personne objects
     //  */

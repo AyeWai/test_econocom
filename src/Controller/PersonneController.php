@@ -8,6 +8,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 use App\Service\PersonneService;
+use App\Repository\PersonneRepository;
 use DateTimeInterface;
 
 class PersonneController extends AbstractController
@@ -27,6 +28,15 @@ class PersonneController extends AbstractController
     public function createPersonne(Request $request, ValidatorInterface $validator, PersonneService $personneService) : Response
      {
         return $personneService->persistPersonne($request, $validator);
+              
+     }
+
+     /**
+     * @Route("/personne-display", name="personne_display")
+     */
+     public function displayPersonne(Request $request, PersonneService $personneService, PersonneRepository $personneRepository) : Response
+     {
+        return $personneService->getPersonnes($personneRepository);
               
      }
 }

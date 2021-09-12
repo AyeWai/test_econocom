@@ -3,6 +3,7 @@
 namespace App\Service;
 
 use App\Entity\Personne;
+use App\Repository\PersonneRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -49,5 +50,38 @@ class PersonneService extends AbstractController{
         ]);
         }
     }
+
+
+    public function getPersonnes(PersonneRepository $personneRepository): Response{
+
+        /*$personne = $this->getDoctrine()
+            ->getRepository(Personne::class)
+            ->find($id);
+
+        if (!$personne) {
+            throw $this->createNotFoundException(
+                'No product found for id '.$id
+            );
+        }
+
+
+        return $this->render('personne/display.html.twig',[
+            'personne' => $personne,
+        ]);*/
+
+        $personnes = $personneRepository
+            ->findAll();
+
+        return $this->render('personne/display.html.twig',[
+            'personnes' => $personnes,
+        ]);
+    }
+
+    
+        //return new Response('Check out this great product: '.$product->getName());
+
+        // or render a template
+        // in the template, print things with {{ product.name }}
+        // return $this->render('product/show.html.twig', ['product' => $product]);
 
 }
