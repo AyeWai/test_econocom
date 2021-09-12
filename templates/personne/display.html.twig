@@ -19,7 +19,7 @@
     <tr>
       <td data-label="Account">{{ personne.nom }}</td>
       <td data-label="Due Date">{{ personne.prenom }}</td>
-      <td data-label="Amount">Test</td>
+      <td data-label="Amount">{{ personne.datenaissance|date('d-m-Y')}}</td>
     </tr>
   {%endfor%}
     <tr>

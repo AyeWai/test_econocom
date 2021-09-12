@@ -21,7 +21,7 @@ class PersonneRepository extends ServiceEntityRepository
 
     public function findAll()
     {
-        return $this->findBy(array(), array('id' => 'ASC'));
+        return $this->findBy(array(), array('nom' => 'ASC'));
     }
 
     // /**
