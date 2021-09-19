@@ -24,6 +24,21 @@ class PersonneRepository extends ServiceEntityRepository
         return $this->findBy(array(), array('nom' => 'ASC'));
     }
 
+    public function findAllGreaterThanPrice(int $price): array
+    {
+        $entityManager = $this->getEntityManager();
+
+        $query = $entityManager->createQuery(
+            'SELECT p
+            FROM App\Entity\Product p
+            WHERE p.price > :price
+            ORDER BY p.price ASC'
+        )->setParameter('price', $price);
+
+        // returns an array of Product objects
+        return $query->getResult();
+    }
+
     // /**
     //  * @return Personne[] Returns an array of Personne objects
     //  */
