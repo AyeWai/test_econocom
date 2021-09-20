@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Affichage carré coloré{% endblock %}
+
+{% block body %}
+
+{%for key in colors %}
+	<div style = "background-color: {{key}}; height: 150px; width: 150px; margin: 15% 50% 10% 50% ">
+		<h1>Carré coloré</h1>
+	</div>
+{% endfor%}
+{% endblock %}

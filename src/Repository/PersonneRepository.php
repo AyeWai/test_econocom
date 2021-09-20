@@ -30,8 +30,8 @@ class PersonneRepository extends ServiceEntityRepository
 
         $query = $entityManager->createQuery(
             'SELECT p
-            FROM App\Entity\Product p
-            WHERE p.price > :price
+            FROM App\Entity\Personne p
+            WHERE p.nom IN :price
             ORDER BY p.price ASC'
         )->setParameter('price', $price);
 
