@@ -36,5 +36,12 @@ class SquareDisplayingService extends AbstractController{
         return $colors;
     }
 
+    public function colorOne(SquareDisplayingService $squareDisplayingService, int $number){
+
+        $colors = $squareDisplayingService->colorsArray($squareDisplayingService);
+
+        return $colors[$number];
+    }
+
 }
 ?>

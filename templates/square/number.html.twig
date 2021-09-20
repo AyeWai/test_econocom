@@ -19,7 +19,7 @@
 							<a class="nav-link" href="{{path('square', )}}">Afficher le carré</a>
 						</li>
                         <li class="nav-item">
-							<a class="nav-link" href="{{path('squarev2', )}}">Afficher le carré : évolution</a>
+							<a class="nav-link" href="{{path('square', )}}">Afficher le carré : évolution</a>
 						</li>
 					</ul>
 					<!-- <form class="d-flex">
@@ -34,18 +34,23 @@
 				<h1>Home</h1>
 				<p class="lead">Sujet :
 
-                « Ecrire une solution en PHP 7+ / Symfony qui parcours les entiers de 1 à 50 et qui affiche dans une page Web un carré de couleur verte, si le nombre est divisible par 3, un carré de couleur bleu, si le nombre est divisible par 5 ou un carré de couleur jaune si le nombre est divisible par 3 et 5.
-
-                La solution sera évaluée sur sa structure, son découpage en couches , la présentation du résultat et son évolutivité. »
+                La solution pourrait évoluer en proposant à l'utilisateur d'afficher le carré selon un nombre choisit au préalable par l'utilisateur
 
                 </p>
-                <p> Cliquez sur le bouton ci-dessous pour lancer la fonction </p>
+				<p> Insérer un nombre pour lancer la nouvelle fonction </p>
+				<form  method="post" class="form" id="form" action= "{{path('personne_register',)}}">
+
+					<h2 class="form__title">Choisir un nombre</h2>
+					<input type="string" placeholder="Nombre" class="input" name="nombre" id="inputNombre"  required />  
+					<button class="btn" type="submit" >Afficher le carré</button>
+
+				</form>
  
 			</div>
 
 			<div class="row ">
 				<div class="col-md-12 col-lg-12">
-						<button class="w-50 btn btn-primary btn-lg mx-auto d-block" onclick=location.href='{{path('square',)}}'>Afficher le carré</button> 
+						<button class="w-50 btn btn-primary btn-lg mx-auto d-block" onclick=location.href='{{path('squarev2/{slug}',)}}'>Afficher le carré</button> 
 				</div>
 			</div>
 
