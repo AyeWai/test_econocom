@@ -1,20 +1,52 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!{% endblock %}
+{% block title %}Test Econocom | Home{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+<div class="container">
+		<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+			<div class="container-fluid">
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+						<li class="nav-item">
+							<a class="nav-link active" aria-current="page"  href="{{path('home',)}}">Home</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="{{path('square', )}}">Afficher le carré</a>
+						</li>
+					</ul>
+					<!-- <form class="d-flex">
+						<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+						<button class="btn btn-outline-success" type="submit">Search</button>
+					</form>-->
+				</div>
+			</div>
+		</nav>
+		<main>
+			<div class="py-5 text-center mt-5">
+				<h1>Home</h1>
+				<p class="lead">Sujet :
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/test_technique/src/Controller/HomeController.php'|file_link(0) }}">src/Controller/HomeController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/test_technique/templates/home/index.html.twig'|file_link(0) }}">templates/home/index.html.twig</a></code></li>
-    </ul>
-</div>
+                « Ecrire une solution en PHP 7+ / Symfony qui parcours les entiers de 1 à 50 et qui affiche dans une page Web un carré de couleur verte, si le nombre est divisible par 3, un carré de couleur bleu, si le nombre est divisible par 5 ou un carré de couleur jaune si le nombre est divisible par 3 et 5.
+
+                La solution sera évaluée sur sa structure, son découpage en couches , la présentation du résultat et son évolutivité. »
+
+                </p>
+                <p> Cliquez sur le bouton ci-dessous pour lancer la fonction </p>
+ 
+			</div>
+
+			<div class="row ">
+				<div class="col-md-12 col-lg-12">
+						<button class="w-50 btn btn-primary btn-lg mx-auto d-block" onclick=location.href='{{path('square',)}}'>Afficher le carré</button> 
+				</div>
+			</div>
+
+
+		</main>
+
 {% endblock %}

@@ -1,12 +1,18 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Affichage carré coloré{% endblock %}
+{% block title %}Test Econocom | Affichage carré{% endblock %}
 
 {% block body %}
 
+<div class="row ">
+	<div class="col-md-12 col-lg-12" style = "margin: 25px;" >
+		<button class="w-50 btn btn-primary btn-lg mx-auto d-block" onclick=location.href='{{path('home',)}}'>Home</button> 
+	</div>
+</div>
+
 {%for key in colors %}
 	<div style = "background-color: {{key}}; height: 150px; width: 150px; margin: 15% 50% 10% 50% ">
-		<h1>Carré coloré</h1>
+		<h1>{{loop.index}}</h1>
 	</div>
 {% endfor%}
 {% endblock %}
