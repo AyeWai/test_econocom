@@ -22,7 +22,21 @@ class SquareDisplayingServiceTest extends KernelTestCase{
         $array = $squareDisplayingService->loopToFifty();
         $this->assertCount(50, $array);
         $this->assertEquals(range(1,50), $array);
+
+        return $squareDisplayingService;
      
+    }
+    /**
+     * @depends testLoopToFifty
+     */
+    public function testColorsArray($squareDisplayingService){
+
+        $colors = $squareDisplayingService->colorsArray($squareDisplayingService);
+
+        $this->assertEquals('white', $colors[1]);
+        $this->assertEquals('green', $colors[2]);
+        $this->assertEquals('blue', $colors[4]);
+        $this->assertEquals('yellow', $colors[15], 'Divisible par 3 et 5');
     }
 
 }
